@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>LTS</groupId>
-	<artifactId>LTSMOVIE</artifactId>
+	<artifactId>jSpring-cinema</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>LTSMOVIE</name>
 	<description>LTSMOVIE</description>

@@ -25,7 +25,7 @@ public class SeatType {
     private String nameType;
 
     // OneToMany References:
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "SeatTypeId")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "seatTypeId")
     @JsonManagedReference()
     private Set<Seat> seats;
 }

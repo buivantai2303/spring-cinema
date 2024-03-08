@@ -22,7 +22,7 @@ public class Rate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "Code")
+    @Column(name = "Description")
     private String description;
 
     @Column(name = "Code")

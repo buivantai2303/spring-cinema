@@ -37,7 +37,7 @@ public class Schedule {
 
     // Reference:
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "MovieId", foreignKey = @ForeignKey(name = "fk_schedule_movie"), insertable = false, updatable = false)
+    @JoinColumn(name = "MovieId", insertable = false, updatable = false)
     @JsonBackReference
     private Movie movieId;
 

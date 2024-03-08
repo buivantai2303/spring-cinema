@@ -1,5 +1,6 @@
 package lts.ltsmovie.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "Promotion")
@@ -50,4 +52,9 @@ public class Promotion {
     @JoinColumn(name = "RankCustomerId", foreignKey = @ForeignKey(name = "fk_promotion_rankCustomer"), insertable = false, updatable = false)
     @JsonBackReference
     private RankCustomer rankCustomerId;
+
+    // OneToMany References:
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "promotionId")
+    @JsonManagedReference()
+    private Set<Bill> bills;
 }

@@ -1,32 +1,25 @@
 package lts.ltsmovie.models;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Set;
-
 @Entity
-@Table(name = "BillStatus")
+@Table(name = "Banner")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class BillStatus {
-
+public class Banner {
     @Id
     @Column(name = "Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "Name")
-    private String name;
+    @Column(name = "ImageUrl")
+    private String imageUrl;
 
-    // OneToMany References:
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "billStatusId")
-    @JsonManagedReference()
-    private Set<Bill> bills;
+    @Column(name = "Title")
+    private String title;
 }

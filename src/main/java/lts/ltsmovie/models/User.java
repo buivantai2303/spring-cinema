@@ -64,6 +64,11 @@ public class User {
 
 
     // OneToMany References :
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customerId")
+    @JsonManagedReference()
+    private Set<Bill> bills;
+
+    // OneToMany References :
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "userId")
     @JsonManagedReference()
     private Set<ConfirmEmail> confirmEmails;

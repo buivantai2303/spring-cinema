@@ -48,7 +48,7 @@ public class Seat {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SeatTypeId", foreignKey = @ForeignKey(name = "fk_seat_seatType"), insertable = false, updatable = false)
     @JsonBackReference
-    private Room seatTypeId;
+    private SeatType seatTypeId;
 
     // OneToMany References:
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "seatId")
